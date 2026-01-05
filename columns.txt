@@ -1,0 +1,19 @@
+   attname   | attnum 
+-------------+--------
+ tableoid    |     -6
+ cmax        |     -5
+ xmax        |     -4
+ cmin        |     -3
+ xmin        |     -2
+ ctid        |     -1
+ instance_id |      1
+ id          |      2
+ token       |      3
+ user_id     |      4
+ revoked     |      5
+ created_at  |      6
+ updated_at  |      7
+ parent      |      8
+ session_id  |      9
+(15 rows)
+

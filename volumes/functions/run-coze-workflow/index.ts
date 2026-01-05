@@ -56,10 +56,13 @@ serve(async (req) => {
 
     if (workflowRow?.api_key) {
       try {
+        console.log("DEBUG: Raw API Key from DB:", workflowRow.api_key);
         cozeApiKey = await decrypt(workflowRow.api_key, masterKey)
+        console.log("DEBUG: Decrypted API Key:", cozeApiKey);
       } catch (decryptError) {
-        console.error('Failed to decrypt workflow API key:', decryptError)
-        throw new Error('Failed to decrypt workflow API key')
+        console.warn('Failed to decrypt workflow API key, using as plain text')
+        cozeApiKey = workflowRow.api_key
+        console.log("DEBUG: Using Plain Text API Key:", cozeApiKey);
       }
     }
 
